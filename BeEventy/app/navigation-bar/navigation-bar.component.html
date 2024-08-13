@@ -1,0 +1,17 @@
+<!-- <div id="navigation-bar">
+  <div class="buttons">
+    <button class="btn" (click)="sortByDate()"><b>Najnowsze</b></button>
+    <button class="btn" (click)="sortByVotes()"><b>Popularne</b></button>
+    <button class="btn" (click)="sortByClosestDate()"><b>Najbliższe</b></button>
+    <button class="btn"><b>Oczekujące</b></button> 
+  </div>
+</div> -->
+<div id="navigation-bar">
+  <div class="buttons">
+    <button class="btn" [ngClass]="{'active': currentSort === 'date'}" (click)="sortByDate()"><b>Najnowsze</b></button>
+    <button class="btn" [ngClass]="{'active': currentSort === 'votes'}" (click)="sortByVotes()"><b>Popularne</b></button>
+    <button class="btn" [ngClass]="{'active': currentSort === 'closest'}" (click)="sortByClosestDate()"><b>Najbliższe</b></button>
+    <button class="btn"><b>Oczekujące</b></button> 
+    <!-- jeżeli zalogowany użytkownik -->
+  </div>
+</div>

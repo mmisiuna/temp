@@ -1,0 +1,50 @@
+<table>
+    <tr>
+        <td rowspan="2">
+            
+        </td>
+        <td colspan="4">
+            {{event.name}}
+        </td>
+        <td colspan="3" rowspan="3">
+            <img [src]="'assets/events/' + event.image" (error)="loadImageError($event)">
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            {{ event.dateOfStart |  date: 'dd.MM.yyyy' }} - {{ event.dateOfEnd | date: 'dd.MM.yyyy'}}
+        </td>
+        <td colspan="2">
+            {{ lowestTicketPrice !== undefined ? lowestTicketPrice : 'N/A' }} -  {{ highestTicketPrice !== undefined ? highestTicketPrice : 'N/A' }} zł
+        </td>
+        <td>
+            Dodał: {{user.name}}
+        </td>
+        <td>
+            Dodane: {{event.dateOfUpload}}
+        </td>
+    </tr>
+    <tr>
+        <td colspan="6" rowspan="4">
+            {{event.description}}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button>+</button>
+        </td>
+        <td>
+            <button>-</button>
+        </td>
+    </tr>
+    <tr>
+        <td class="votes" style="background-color: #C6EFCE; color: darkgreen; padding:0.5vw;">{{ event.pluses }}</td>
+        <td class="votes" style="background-color: #FFC7CE; color: rgb(185, 10, 10);" padding:0.5vw>{{ event.minuses }}</td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <button>!</button>
+        </td>
+    </tr>
+</table>
+Ticket Component
